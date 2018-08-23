@@ -1,0 +1,25 @@
+page-categories {
+    .imagecard{
+        height: 25vh;
+        &:nth-child(1){
+            background: url('../../assets/imgs/beachre.jpg');
+            background-size: cover;
+            background-position: bottom;
+        }
+        &:nth-child(2){
+            background: url('../../assets/imgs/resort.jpg');
+            background-size: cover;
+            background-position: bottom;
+        }
+        &:nth-child(3){
+            background: url('../../assets/imgs/beachouse.jpg');
+            background-size: cover;
+            background-position: bottom;
+        }
+        &:nth-child(4){
+            background: url('../../assets/imgs/camping.jpg');
+            background-size: cover;
+            background-position: bottom;
+        }
+    }
+}
