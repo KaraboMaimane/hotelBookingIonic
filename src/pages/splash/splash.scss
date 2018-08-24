@@ -1,0 +1,8 @@
+page-splash {
+    ion-content{
+        background: url('../../assets/imgs/hero.jpg');
+        background-size: cover;
+        animation: fadeIn 1s ease;
+        background-position: center;
+    }
+}

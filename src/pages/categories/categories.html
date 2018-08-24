@@ -1,14 +1,46 @@
 <ion-content>
-  <div class="imagecard">
-    &nbsp;
-  </div>
-  <div class="imagecard">
-      &nbsp;
-  </div>
-  <div class="imagecard">
-      &nbsp;
-  </div>
-  <div class="imagecard">
-      &nbsp;
-  </div>
+    <div class="imagecard" (click)="nextpage('AllPage')">
+        <div class="imagecard__textflex">
+            <div class="imagecard__textflex__headingflex">
+                <h1 class="imagecard__textflex__headingflex__heading">
+                    <span class="imagecard__textflex__headingflex__heading--span  span--1">
+                        All <i class="fas fa-star"></i> Tours
+                    </span>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="imagecard" (click)="nextpage('FivePage')">
+        <div class="imagecard__textflex">
+            <div class="imagecard__textflex__headingflex">
+                <h1 class="imagecard__textflex__headingflex__heading">
+                    <span class="imagecard__textflex__headingflex__heading--span  span--2">
+                        5 <i class="fas fa-star"></i> Tours
+                    </span>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="imagecard" (click)="nextpage('FourPage')">
+        <div class="imagecard__textflex">
+            <div class="imagecard__textflex__headingflex">
+                <h1 class="imagecard__textflex__headingflex__heading">
+                    <span class="imagecard__textflex__headingflex__heading--span  span--3">
+                        >4 <i class="fas fa-star"></i> Tours
+                    </span>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="imagecard" (click)="nextpage('BudgetPage')">
+        <div class="imagecard__textflex">
+            <div class="imagecard__textflex__headingflex">
+                <h1 class="imagecard__textflex__headingflex__heading">
+                    <span class="imagecard__textflex__headingflex__heading--span  span--4">
+                        Budget <i class="fas fa-money-bill-alt"></i>  Tours
+                    </span>
+                </h1>
+            </div>
+        </div>
+    </div>
 </ion-content>

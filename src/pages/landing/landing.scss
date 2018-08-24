@@ -28,11 +28,15 @@ page-landing {
                 color: $color-grey-light-1;
                 font-family: $font-1;
                 font-weight: 600;
+                animation: .5s ease fadeIn;
+                animation-delay: 1s;
             }
 
             &__imageflex{
                 display: flex;
                 justify-content: center;
+                animation: .5s ease fadeIn;
+                animation-delay: 1.5s;
             }
 
             &__quoteflex{
@@ -40,6 +44,8 @@ page-landing {
                     font-size: 2rem;
                     text-align: center;
                     text-transform: capitalize;
+                    animation: .5s ease fadeIn;
+                    animation-delay: 2s;
                 }
             }
             

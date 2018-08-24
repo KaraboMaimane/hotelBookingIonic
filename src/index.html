@@ -34,6 +34,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC');
     </style>
+
 </head>
 <body>
 
@@ -49,6 +50,21 @@
 
   <!-- The main bundle js is generated during the build process -->
   <script src="build/main.js"></script>
+
+  
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCxoK0TjMSiIf-TmCn7cXUvnNn72VD7Ejw",
+    authDomain: "hotel-booking-dfa63.firebaseapp.com",
+    databaseURL: "https://hotel-booking-dfa63.firebaseio.com",
+    projectId: "hotel-booking-dfa63",
+    storageBucket: "hotel-booking-dfa63.appspot.com",
+    messagingSenderId: "573074981582"
+  };
+  firebase.initializeApp(config);
+</script>
 
 </body>
 </html>
