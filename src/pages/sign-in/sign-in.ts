@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { DatabaseProvider } from '../../providers/database/database';
 
@@ -16,16 +16,32 @@ import { DatabaseProvider } from '../../providers/database/database';
   templateUrl: 'sign-in.html',
 })
 export class SignInPage {
-  constructor(private db: DatabaseProvider){
+  constructor(private db: DatabaseProvider,private loading: LoadingController, private alert: AlertController){
 
   }
   onsignin(form: NgForm){
+    const loading = this.loading.create({
+      content: 'Signing you in..'
+    });
+    loading.present();
     this.db.signin(form.value.email, form.value.password)
     .then(data => {
-      console.log(data);
+      loading.dismiss();
+      const alert = this.alert.create({
+        title: 'Sign in success',
+        message: 'You may now proceed',
+        buttons: ['Ok']
+      });
+      alert.present();
     })
     .catch(error => {
-      console.log(error);
+      loading.dismiss();
+      const alert = this.alert.create({
+        title: 'Sign in failed',
+        message: error,
+        buttons: ['Ok']
+      });
+      alert.present();
     })
   }
 }
