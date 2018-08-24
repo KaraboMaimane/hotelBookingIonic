@@ -19,7 +19,6 @@ export class CategoriesPage {
   }
 
   ionViewDidEnter(){
-    console.log(this.db.getData());
   }
 
   nextpage(page: string){
