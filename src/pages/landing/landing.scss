@@ -52,8 +52,10 @@ page-landing {
             &__btnflex{
                 display: flex;
                 justify-content: center;
+                flex-direction: column;
                 &__btn{
                     animation: pulse 1s infinite;
+                    animation-delay: 3s;
                     color: $color-grey-dark;
                     text-transform: uppercase;
                     font-weight: 500;

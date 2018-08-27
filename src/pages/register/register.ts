@@ -38,5 +38,4 @@ export class RegisterPage {
   nextPage(page: string){
     this.navCtrl.push(page);
   }
-
 }

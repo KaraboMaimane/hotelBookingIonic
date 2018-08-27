@@ -28,16 +28,6 @@ export class LandingPage {
 
   nextPage(page: string){
     this.navCtrl.push(page);
-    const alert = this.alertCtrl.create({
-      title: 'Hey There!',
-      subTitle: 'Take a look at our exclusive tour packages<br> Firstly, select a category that you would like to choose from and get a good deal on our tours',
-      buttons: [
-        {
-          text: 'Ok'
-        }
-      ]
-    })
-    alert.present();
   }
 
 }

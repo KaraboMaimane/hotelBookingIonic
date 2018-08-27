@@ -1,4 +1,10 @@
 <ion-content>
+    <ion-fab top right #fab1>
+        <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+        <ion-fab-list>
+            <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+        </ion-fab-list>
+    </ion-fab>
     <div class="imagecard" (click)="nextpage('AllPage')">
         <div class="imagecard__textflex">
             <div class="imagecard__textflex__headingflex">
@@ -37,10 +43,21 @@
             <div class="imagecard__textflex__headingflex">
                 <h1 class="imagecard__textflex__headingflex__heading">
                     <span class="imagecard__textflex__headingflex__heading--span  span--4">
-                        Budget <i class="fas fa-money-bill-alt"></i>  Tours
+                        Budget <i class="fas fa-money-bill-alt"></i> Tours
                     </span>
                 </h1>
             </div>
         </div>
     </div>
+    <ion-fab bottom right #fab1>
+            <button ion-fab mini (click)="nextpage('AddPage')"><ion-icon name="add"></ion-icon></button>
+        </ion-fab>
 </ion-content>
+
+<!-- 
+    name
+    description
+    price
+    maxOccupants
+    rating
+-->

@@ -1,19 +1,15 @@
-<!--
-  Generated template for the RegisterPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Register</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding>
+  <div class="headflex">
+    <div class="headflex__logo">
+        <img src="../../assets/imgs/favicon.png" alt="" class="headflex__logo--img">
+    </div>
+    <div class="headflex__heading">
+        <h1 class="headflex__heading--heading1">Natours</h1>
+    </div>
+    <div class="headflex__heading">
+      <h3 class="headflex__heading--heading2">Registration</h3>
+    </div>
+  </div>
   <form #f="ngForm" (ngSubmit)="signup(f)">
     <ion-list>
       <ion-item>
@@ -27,6 +23,7 @@
     </ion-list>
 
     <button ion-button block type="submit" [disabled]="!f.valid">Submit</button>
-    <button ion-button block (click)="nextPage('SignInPage')">Register</button>
   </form>
+
+  <p class="loginText">Already have an account? click <a (click)="nextPage('SignInPage')" class="loginText__link"> here</a> to Sign In</p>
 </ion-content>

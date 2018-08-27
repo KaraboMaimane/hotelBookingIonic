@@ -1,3 +1,38 @@
 page-sign-in {
+    ion-content{
+        background: url('../../assets/video/video.mp4');
+    }
 
+    .headflex{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        &__logo{
+            &--img{
+                width: 15rem;
+                height: 15rem;
+            }
+        }
+
+        &__heading{
+            &--heading1{
+                text-align: center;
+                font-size: 6rem;
+                color: $color-grey-light-1;
+                font-family: $font-1;
+                font-weight: 600;
+                background: linear-gradient(180deg, rgba($color-primary-dark, 0.9), rgba($color-primary-light, 0.9));
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+
+            &--heading2{
+                margin-top: 1rem;
+                margin-bottom: 2.5rem;
+                color: $color-grey-dark;
+                font-weight: 400;
+                font-size: 2.5rem;
+            }
+        }
+    }
 }
