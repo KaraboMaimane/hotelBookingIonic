@@ -35,7 +35,9 @@ export class CategoriesPage {
     });
   }
 
-  ionViewDidEnter(){
+  logout(){
+    this.db.logout();
+    this.navCtrl.push('LandingPage');
   }
 
   nextpage(page: string){

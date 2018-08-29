@@ -17,21 +17,16 @@ export class DatabaseProvider {
 
   logout(){
     firebase.auth().signOut();
-    this.toast.create({
+    const toast = this.toast.create({
       message: 'You have successfully logged out!',
       duration: 5000
     });
+    toast.present();
   }
   
   getUser(){
     return firebase.auth().currentUser;
   }
-
-  /*
-  getuser().getToken().then((token: string) =>{
-
-  });
-  */
 
   addHotel(name, description, url, price, occupants, rating){
     firebase.database().ref('hotel-bookings').push({
@@ -45,9 +40,9 @@ export class DatabaseProvider {
   }
 
   getData(){
-    firebase.database().ref('hotel-booking').on('value', (data: any)=>{
+    firebase.database().ref('hotel-suites').on('value', (data: any)=>{
       return data;
-    })
+    });
   }
 
 }

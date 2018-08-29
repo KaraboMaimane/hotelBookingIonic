@@ -7,12 +7,34 @@
 <ion-header>
 
   <ion-navbar color='quad'>
-    <ion-title>budget</ion-title>
+    <ion-title>Budget Tours</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+    <div *ngFor="let suite of suitesArr" class="card" [ngStyle]="{
+      'background-image': 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .7)),url('+ suite.url +')',
+      'background-size': 'cover',
+      'background-position': 'center'
+    }">
+  <div class="card__content__section1 content">
+    <h1 class="card__content__section1 title">{{suite.name | slice:0:20}}</h1>
+    <p *ngIf="suite.rating == 5" class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+        class="fas fa-star"></i><i class="fas fa-star"></i></p>
+    <p *ngIf="suite.rating == 4" class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+        class="fas fa-star"></i></p>
+    <p *ngIf="suite.ratin == 3" class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+    <p class="stars" *ngIf="suite.rating == 2"><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+    <p class="stars" *ngIf="suite.rating == 1">
+    </p>
+    <p class="card__content__section1 description">{{suite.description | slice:0:150}}...</p>
+  </div>
+  <div class="card__content__section2">
+    <div class="card__content__section2__pricing pricediv">
+      <h1 class="card__content__section2__pricing__price pricetext">ZAR {{suite.price}}</h1>
+    </div>
+  </div>
+</div>
 </ion-content>

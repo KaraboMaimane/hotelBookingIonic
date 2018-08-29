@@ -2,7 +2,9 @@
     <ion-fab top right #fab1>
         <button ion-fab mini><ion-icon name="add"></ion-icon></button>
         <ion-fab-list>
-            <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+            <button ion-fab mini (click)="nextpage('AddPage')"><ion-icon name="add"></ion-icon></button>
+            <button *ngIf="isAuthenticated == true" ion-fab><i class="fas fa-sign-out-alt" (click)="logout()"></i></button>
+            <button *ngIf="isAuthenticated == false" ion-fab><i class="fas fa-sign-in-alt" (click)="nextpage('RegisterPage')"></i></button>
         </ion-fab-list>
     </ion-fab>
     <div class="imagecard" (click)="nextpage('AllPage')">
@@ -49,9 +51,6 @@
             </div>
         </div>
     </div>
-    <ion-fab bottom right #fab1>
-            <button ion-fab mini (click)="nextpage('AddPage')"><ion-icon name="add"></ion-icon></button>
-        </ion-fab>
 </ion-content>
 
 <!-- 

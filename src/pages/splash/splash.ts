@@ -23,7 +23,7 @@ export class SplashPage {
     let timer = setInterval(() => {
       this.navCtrl.push('LandingPage');
       clearInterval(timer);
-    }, 5000);
+    }, 3500);
   }
 
 }

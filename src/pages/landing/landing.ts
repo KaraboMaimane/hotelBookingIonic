@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, AlertController } from 'ionic-angular';
 import { SplashPage } from '../splash/splash';
+import { DatabaseProvider } from '../../providers/database/database';
 
 /**
  * Generated class for the LandingPage page.
@@ -18,8 +19,7 @@ export class LandingPage {
   splash = true;
   splashPage = SplashPage;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
-
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public db: DatabaseProvider) {
   }
 
   ionViewDidLoad(){
