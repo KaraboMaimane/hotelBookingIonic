@@ -7,12 +7,88 @@
 <ion-header>
 
   <ion-navbar [color]="color">
-    <ion-title>booking</ion-title>
+    <ion-title>{{suite.name}} Booking</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <div class="imagecontainer" [ngStyle]="{
+      'background-image': 'linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)),url('+ suite.url +')',
+      'background-size': 'cover',
+      'background-position': 'center'
+    }">
+    <div class="imagecontainer__priceflex">
+      <div class="imagecontainer__priceflex__price">
+        <p class="imagecontainer__priceflex__price__pricetext">ZAR {{suite.price}}</p>
+      </div>
+    </div>
+    <div class="imagecontainer__starsflex">
+      <p *ngIf="suite.rating == 5" class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </p>
+      <p *ngIf="suite.rating == 4" class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </p>
+      <p *ngIf="suite.rating == 3" class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </p>
+      <p class="stars" *ngIf="suite.rating == 2">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </p>
+      <p class="stars" *ngIf="suite.rating == 1">
+        <i class="fas fa-star"></i>
+      </p>
+    </div>
+  </div>
+  <h1 class="bookingText">{{user}} <br> Booking Form</h1>
+  <div class="formcontainer">
+    
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <ion-list>
+        <ion-item>
+          <ion-label fixed color="color">Name</ion-label>
+          <ion-input ngModel type="text" name="name" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed color="color">Surname</ion-label>
+          <ion-input ngModel type="text" name="surname" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed color="color">Id No</ion-label>
+          <ion-input ngModel type="number" name="idNo" required [maxlength]="14" [minlength]="1"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed color="color">Date From</ion-label>
+          <ion-datetime displayFormat="YYYY-MM-DD" required ngModel name="datefrom" [min]="formattedDate" max="2090-10-20"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed color="color">Date To</ion-label>
+          <ion-datetime displayFormat="YYYY-MM-DD" [min]="formattedDate" max="2090-10-20" ngModel name="dateto" required></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-badge item-end color="color">{{f.value.occupants}}</ion-badge>
+          <ion-label stacked>Occupants</ion-label>
+          <ion-range color="color" ngModel type="range" step="1" name="occupants" min="1" required [max]="suite.occupants" #slider>
+            <ion-label range-left>1</ion-label>
+            <ion-label range-right>{{suite.occupants}}</ion-label>
+          </ion-range>
+        </ion-item>
+      </ion-list>
+      
+    </form>
+  </div>
+
 
 </ion-content>

@@ -14,7 +14,6 @@
 
 
 <ion-content padding>
-
   <div *ngFor="let suite of suitesArr; let i = index" (click)="displaypage('DisplayAllPage', i)" class="card cardflex" [ngStyle]="{
         'background-image': 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .7)),url('+ suite.url +')',
         'background-size': 'cover',
@@ -26,7 +25,7 @@
           class="fas fa-star"></i><i class="fas fa-star"></i></p>
       <p *ngIf="suite.rating == 4" class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
           class="fas fa-star"></i></p>
-      <p *ngIf="suite.ratin == 3" class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+      <p *ngIf="suite.rating == 3" class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
       <p class="stars" *ngIf="suite.rating == 2"><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
       <p class="stars" *ngIf="suite.rating == 1">
       </p>

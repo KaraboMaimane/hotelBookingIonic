@@ -9,7 +9,7 @@ page-all {
     .card{
       box-shadow: .1rem .5rem .8rem rgba($color-grey-dark, .7);
       color: $color-grey-light-1;
-      height: 37%;
+      height: 35%;
       border-radius: 2rem;
       overflow: clip;
       &:not(:last-child){
@@ -92,7 +92,15 @@ page-all {
             margin-right: .6rem;
         }
       }
-
     }
 
+    .fab{
+        background: $color-primary-dark;
+        z-index: 100;
+        width: 5rem;
+        height: 5rem;
+        position: fixed;
+        left: 80%;
+        top: -20vh;
+    }
 }

@@ -34,10 +34,9 @@ export class DisplayAllPage implements OnInit {
 
   ngOnInit(){
     this.suite = this.navParams.get('suite');
-    console.log(this.suite);
   }
 
   nextPage(page: string){
-    this.navCtrl.push(page, {color: 'secondary'});
+    this.navCtrl.push(page, {color: 'secondary', suite: this.suite});
   }
 }
