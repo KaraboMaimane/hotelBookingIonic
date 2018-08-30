@@ -1,58 +1,104 @@
 page-display-all {
-     .imagecontainer{
-          width: 100vw;
-          height: 30vh;
-          &__image{
-               width: 100%;
-               height: 100%;
-          }
-          &__priceflex{
-               height: 50%;
-               display: flex;
-               justify-content: flex-end;
-               position: relative;
-               top: 30%;
+    ion-content{
+        height: 100vh;
+    }
+    .imagecontainer{
+        width: 100vw;
+        height: 30vh;
+        &__image{
+            width: 100%;
+            height: 100%;
+        }
+        &__priceflex{
+            height: 50%;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            top: 30%;
 
-               &__price{
-                    height: 40%;
-                    display: flex;
+            &__price{
+                &__pricetext{
                     background: linear-gradient(rgba($color-secondary-light, .9),rgba($color-secondary-dark, .9));
                     border-top-left-radius: 2rem;
                     border-bottom-left-radius: 2rem;
                     font-size: 1.8rem;
                     font-weight: 300;
-                    &__pricetext{
-                         color: $color-black;
-                    }
-               }
-          }
-          &__starsflex{
-               height: 50%;
-               display: flex;
-               justify-content: center;
-               align-items: flex-end;
-               font-size: 2.5rem;
-               i{
-                    display: inline-block;
-                    background: linear-gradient(rgba($color-secondary-dark, 1),rgba($color-secondary-light, 1));
-                    -webkit-background-clip: text;
-                    color: transparent;
-                    &:nth-child(1){
-                         animation: moveInBottom .3s ease;
-                    }
-                    &:nth-child(2){
-                         animation: moveInBottom .6s ease;
-                    }
-                    &:nth-child(3){
-                         animation: moveInBottom .9s ease;
-                    }
-                    &:nth-child(4){
-                         animation: moveInBottom 1.2s ease;
-                    }
-                    &:nth-child(5){
-                         animation: moveInBottom 1.5s ease;
-                    }
+                    color: $color-white;
+                    padding: .5rem;
                 }
-          }
-     }
+            }
+        }
+        &__starsflex{
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            font-size: 2.5rem;
+            i{
+                display: inline-block;
+                background: linear-gradient(rgba($color-secondary-dark, 1),rgba($color-secondary-light, 1));
+                -webkit-background-clip: text;
+                color: transparent;
+                &:nth-child(1){
+                        animation: moveInBottom .3s ease;
+                }
+                &:nth-child(2){
+                        animation: moveInBottom .6s ease;
+                }
+                &:nth-child(3){
+                        animation: moveInBottom .9s ease;
+                }
+                &:nth-child(4){
+                        animation: moveInBottom 1.2s ease;
+                }
+                &:nth-child(5){
+                        animation: moveInBottom 1.5s ease;
+                }
+            }
+        }
+    }
+
+    .descText{
+        text-align: center;
+        color: $color-grey-dark;
+        font-weight: 300;
+    }
+    .contentbox{
+        height: 25%;
+        overflow: scroll;
+        color: $color-grey-dark;
+        &__description{
+            animation: scrollUp 50s ease infinite;
+            animation-delay: 2s;
+        }
+    }
+
+    .capacity{
+        padding: 0; 
+        margin: 0;
+        color: $color-grey-dark;
+        text-align: center;
+        &--headingText{
+            font-weight: 300;
+        }
+        &--occupants{
+            display: inline-block;
+            background: linear-gradient(rgba($color-secondary-dark, 1),rgba($color-secondary-light, 1));
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            font-size: 3rem;
+        }
+    }
+
+    .bookbtn{
+        display: block;
+        margin: 0 auto;
+        padding: 1rem 3rem 1rem 3rem;
+        background: linear-gradient(rgba($color-secondary-light, 1),rgba($color-secondary-dark, 1));
+        color: $color-white;
+        font-size: 2rem;
+        border-radius: 2rem;
+        text-transform: uppercase;
+    }
 }

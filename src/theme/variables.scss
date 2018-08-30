@@ -115,6 +115,16 @@ $font-1: 'Playfair Display SC', serif;
     opacity: 1;
   }
 }
+
+@keyframes scrollUp{
+  90%{
+      transform: translateY(-100%);
+      opacity: .9;
+  }
+  100%{
+      opacity: .4;
+  }
+}
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here

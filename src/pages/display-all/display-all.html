@@ -21,7 +21,7 @@
   }">
     <div class="imagecontainer__priceflex">
       <div class="imagecontainer__priceflex__price">
-          <p class="imagecontainer__priceflex__price__pricetext">ZAR {{suite.price}}</p>
+        <p class="imagecontainer__priceflex__price__pricetext">ZAR {{suite.price}}</p>
       </div>
     </div>
     <div class="imagecontainer__starsflex">
@@ -48,10 +48,18 @@
         <i class="fas fa-star"></i>
       </p>
       <p class="stars" *ngIf="suite.rating == 1">
+          <i class="fas fa-star"></i>
       </p>
     </div>
   </div>
-  <div class="contentflex">
-
+  <h1 class="descText">Description</h1>
+  <div class="contentbox">
+    <p class="contentbox__description">{{suite.description}}</p>
   </div>
+  <div class="capacity">
+    <h1 class="capacity--headingText">Occupant Capacity</h1>
+    <h2 class="capacity--occupants">{{suite.occupants}}</h2>
+  </div>
+  <button *ngIf="isAuthenticated == true" (click)="nextPage('BookingPage')" class="bookbtn">Book Now!</button>
+  <button *ngIf="isAuthenticated == false" (click)="nextPage('RegisterPage')" class="bookbtn">Register To Book</button>
 </ion-content>

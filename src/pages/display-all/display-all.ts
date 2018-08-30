@@ -21,21 +21,13 @@ export class DisplayAllPage implements OnInit {
     rating: '',
     url: ''
   };
-  isAuthenticated: boolean;
+  isAuthenticated: boolean = false;
   constructor(public navCtrl: NavController, public navParams: NavParams, private db: DatabaseProvider, private toast: ToastController) {
     firebase.auth().onAuthStateChanged(user => {
       if(user){
         this.isAuthenticated = true;
-        console.log('logged in');
-        console.log(this.db.getUser().email);
-        const toast = this.toast.create({
-          message: `You are logged in as ${this.db.getUser().email}`,
-          duration: 5000
-        });
-        toast.present();
       }else{
         this.isAuthenticated = false;
-        console.log('not logged in');
       }
     });
   }
@@ -43,5 +35,9 @@ export class DisplayAllPage implements OnInit {
   ngOnInit(){
     this.suite = this.navParams.get('suite');
     console.log(this.suite);
+  }
+
+  nextPage(page: string){
+    this.navCtrl.push(page, {color: 'secondary'});
   }
 }
