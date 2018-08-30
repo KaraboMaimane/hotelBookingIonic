@@ -15,10 +15,15 @@
 
 <ion-content>
   <div class="imagecontainer" [ngStyle]="{
-    'background-image': 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .7)),url('+ suite.url +')',
+    'background-image': 'linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)),url('+ suite.url +')',
     'background-size': 'cover',
     'background-position': 'center'
   }">
+    <div class="imagecontainer__priceflex">
+      <div class="imagecontainer__priceflex__price">
+          <p class="imagecontainer__priceflex__price__pricetext">ZAR {{suite.price}}</p>
+      </div>
+    </div>
     <div class="imagecontainer__starsflex">
       <p *ngIf="suite.rating == 5" class="stars">
         <i class="fas fa-star"></i>
