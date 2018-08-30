@@ -15,7 +15,7 @@
 
 <ion-content padding>
 
-  <div *ngFor="let suite of suitesArr; let i = index" (click)="displaypage('DisplayAll', i)" class="card" [ngStyle]="{
+  <div *ngFor="let suite of suitesArr; let i = index" (click)="displaypage('DisplayAllPage', i)" class="card" [ngStyle]="{
         'background-image': 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .7)),url('+ suite.url +')',
         'background-size': 'cover',
         'background-position': 'center'

@@ -44,7 +44,6 @@ export class AllPage implements OnInit{
   }
 
   displaypage(page:string, i){
-    console.log(i);
-    this.navCtrl.push(page);
+    this.navCtrl.push(page, {suite: this.suitesArr[i]});
   }
 }

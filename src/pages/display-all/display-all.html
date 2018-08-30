@@ -6,13 +6,47 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>displayAll</ion-title>
+  <ion-navbar color='secondary'>
+    <ion-title>{{ suite.name }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <div class="imagecontainer" [ngStyle]="{
+    'background-image': 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .7)),url('+ suite.url +')',
+    'background-size': 'cover',
+    'background-position': 'center'
+  }">
+    <div class="imagecontainer__starsflex">
+      <p *ngIf="suite.rating == 5" class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </p>
+      <p *ngIf="suite.rating == 4" class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </p>
+      <p *ngIf="suite.ratin == 3" class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </p>
+      <p class="stars" *ngIf="suite.rating == 2">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </p>
+      <p class="stars" *ngIf="suite.rating == 1">
+      </p>
+    </div>
+  </div>
+  <div class="contentflex">
 
+  </div>
 </ion-content>

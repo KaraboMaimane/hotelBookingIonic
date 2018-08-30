@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit} from '@angular/core';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import firebase from 'firebase';
+import { DatabaseProvider } from '../../providers/database/database';
 
 /**
  * Generated class for the DisplayAllPage page.
@@ -13,13 +15,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-display-all',
   templateUrl: 'display-all.html',
 })
-export class DisplayAllPage {
+export class DisplayAllPage implements OnInit {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  suite = {
+    rating: '',
+    url: ''
+  };
+  isAuthenticated: boolean;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private db: DatabaseProvider, private toast: ToastController) {
+    firebase.auth().onAuthStateChanged(user => {
+      if(user){
+        this.isAuthenticated = true;
+        console.log('logged in');
+        console.log(this.db.getUser().email);
+        const toast = this.toast.create({
+          message: `You are logged in as ${this.db.getUser().email}`,
+          duration: 5000
+        });
+        toast.present();
+      }else{
+        this.isAuthenticated = false;
+        console.log('not logged in');
+      }
+    });
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DisplayAllPage');
+  ngOnInit(){
+    this.suite = this.navParams.get('suite');
+    console.log(this.suite);
   }
-
 }
