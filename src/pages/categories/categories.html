@@ -2,6 +2,7 @@
     <ion-fab top right>
         <button ion-fab mini><img src="../../assets/imgs/logo-white.png" alt=""></button>
         <ion-fab-list>
+            <button ion-fab mini (click)="nextpage('BookingsListPage')"><i class="fas fa-list-alt"></i></button>
             <button ion-fab mini (click)="nextpage('AddPage')"><ion-icon name="add"></ion-icon></button>
             <button *ngIf="isAuthenticated == true" ion-fab><i class="fas fa-sign-out-alt" (click)="logout()"></i></button>
             <button *ngIf="isAuthenticated == false" ion-fab><i class="fas fa-sign-in-alt" (click)="nextpage('RegisterPage')"></i></button>

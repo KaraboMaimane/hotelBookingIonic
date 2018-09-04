@@ -1,26 +1,26 @@
 <!--
-  Generated template for the AllPage page.
+  Generated template for the BookingsListPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
 
-  <ion-navbar color='secondary'>
-    <ion-title>All Suites</ion-title>
+  <ion-navbar>
+    <ion-title>bookingsList</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <div *ngFor="let suite of suitesArr; let i = index" (click)="displaypage('DisplayAllPage', i)" class="card cardflex" [ngStyle]="{
-        'background-image': 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .7)),url('+ suite.url +')',
+  <div *ngFor="let suite of bookingsList; let i = index" (click)="displaypage('DisplayAllPage', i)" class="card cardflex" [ngStyle]="{
+        'background-image': 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .7)),url('+ suite.image +')',
         'background-size': 'cover',
         'background-position': 'center'
       }">
     <div class="card__content__section1 content">
-      <h1 class="card__content__section1 title">{{suite.name | slice:0:20}}</h1>
+      <h1 class="card__content__section1 title">{{suite.suite | slice:0:20}}</h1>
       <p *ngIf="suite.rating == 5" class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
           class="fas fa-star"></i><i class="fas fa-star"></i></p>
       <p *ngIf="suite.rating == 4" class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
@@ -29,11 +29,11 @@
       <p class="stars" *ngIf="suite.rating == 2"><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
       <p class="stars" *ngIf="suite.rating == 1">
       </p>
-      <p class="card__content__section1 description">{{suite.description | slice:0:100}}...</p>
+      <p class="card__content__section1 description">{{suite.name | slice:0:100}} {{suite.surname | slice:0:100}}</p>
     </div>
     <div class="card__content__section2">
       <div class="card__content__section2__pricing pricediv">
-        <h1 class="card__content__section2__pricing__price pricetext counter">ZAR {{suite.price}}</h1>
+        <h1 class="card__content__section2__pricing__price pricetext counter">{{suite.occupants}}</h1>
       </div>
     </div>
   </div>

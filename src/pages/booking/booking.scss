@@ -61,25 +61,20 @@ page-booking {
     .formcontainer{
         margin: 0;
         padding: 0;
-        height: 37%;
+        height: 50%;
         overflow: scroll;
         margin-bottom: 2rem;
     }
-
-    .buttoncontainer{
-        margin: 0;
-        padding-top: 1.5rem;
-        box-shadow: -.1rem -1rem 1rem rgba($color-grey-dark, .3);
-        &__confirm{
-            display: block;
-            margin: 0 auto;
-            padding: 1rem 3rem 1rem 3rem;
-            background: linear-gradient(rgba($color-secondary-light, 1),rgba($color-secondary-dark, 1));
-            color: $color-white;
-            font-size: 2rem;
-            border-radius: 2rem;
-            text-transform: uppercase;
-        }
+    
+    .confirm{
+        display: block;
+        margin: 0 auto;
+        padding: 1rem 3rem 1rem 3rem;
+        background: linear-gradient(rgba($color-secondary-light, 1),rgba($color-secondary-dark, 1));
+        color: $color-white;
+        font-size: 2rem;
+        border-radius: 2rem;
+        text-transform: uppercase;
     }
 
     .bookingText{
@@ -89,5 +84,15 @@ page-booking {
         box-shadow: .1rem .6rem .5rem rgba($color-grey-dark, .6);
         display: block;
         padding-bottom: .7rem;
+    }
+
+    @keyframes shade{
+        100%{
+            box-shadow: .1rem .6rem .5rem rgba($color-grey-dark, .6);
+        }
+    }
+
+    .text{
+        
     }
 }

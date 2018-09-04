@@ -1,0 +1,96 @@
+page-bookings-list {
+    ion-content{
+        height: 100vh;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .card{
+      box-shadow: .1rem .5rem .8rem rgba($color-grey-dark, .7);
+      color: $color-grey-light-1;
+      height: 35%;
+      border-radius: 2rem;
+      overflow: clip;
+      &:not(:last-child){
+        margin-bottom: 1.5rem;
+      }
+
+      &:first-child{
+      }
+
+      &:nth-child(odd){
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        animation: moveInLeft 1s ease;
+
+        .pricetext{
+            background: linear-gradient(rgba($color-secondary-light, .9),rgba($color-secondary-dark, .9));
+            border-top-left-radius: 2rem;
+            border-bottom-left-radius: 2rem;
+            font-size: 1.8rem;
+            padding: 1rem;
+            font-weight: 300;
+            margin-left: .5rem;
+            min-width: 8rem;
+        }
+
+        .title{
+            font-weight: 300;
+            letter-spacing: .2rem;
+            text-transform: uppercase;
+
+        }
+
+        i{
+            display: inline-block;
+            background: linear-gradient(rgba($color-secondary-dark, 1),rgba($color-secondary-light, 1));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .content{
+            margin-left: .6rem;
+        }
+
+      }
+
+      &:nth-child(even){
+        display: flex;
+        flex-flow: row-reverse;
+        justify-content: center;
+        align-items: center;
+        animation: moveInRight 1s ease;
+
+        .pricetext{
+            background: linear-gradient(rgba($color-secondary-light, .9),rgba($color-secondary-dark, .9));
+            border-top-right-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            font-size: 1.8rem;
+            padding: 1rem;
+            font-weight: 300;
+            margin-right: .5rem;
+            min-width: 8rem;
+        }
+
+        .title{
+            font-weight: 300;
+            letter-spacing: .2rem;
+            text-transform: uppercase;
+        }
+
+        i{
+            display: inline-block;
+            background: linear-gradient(rgba($color-secondary-dark, 1),rgba($color-secondary-light, 1));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .content{
+            margin-right: .6rem;
+        }
+      }
+    }
+}

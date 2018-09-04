@@ -29,13 +29,26 @@ export class DatabaseProvider {
   }
 
   addHotel(name, description, url, price, occupants, rating){
-    firebase.database().ref('hotel-bookings').push({
+    firebase.database().ref('hotel-suites').push({
       name: name,
       description: description,
       url: url,
       price: price,
       occupants: occupants,
       rating: rating
+    });
+  }
+
+  booking(name, surname, idNo, datefrom, dateto, occupants, key, suite, image){
+    firebase.database().ref('hotel-bookings/' + key).push({
+      name: name,
+      surname: surname,
+      idno: idNo,
+      datefrom: datefrom,
+      dateto: dateto,
+      occupants: occupants,
+      suite: suite,
+      image: image
     });
   }
 
