@@ -1,21 +1,22 @@
 page-four {
+    ion-content{
+        height: 100vh;
+    }
     *{
         margin: 0;
         padding: 0;
     }
-
     .card{
       box-shadow: .1rem .5rem .8rem rgba($color-grey-dark, .7);
       color: $color-grey-light-1;
-      height: 27vh;
+      height: 35%;
       border-radius: 2rem;
-
+      overflow: clip;
       &:not(:last-child){
         margin-bottom: 1.5rem;
       }
 
       &:first-child{
-          margin-top: 1.5rem;
       }
 
       &:nth-child(odd){
@@ -40,6 +41,7 @@ page-four {
             font-weight: 300;
             letter-spacing: .2rem;
             text-transform: uppercase;
+
         }
 
         i{
@@ -90,6 +92,15 @@ page-four {
             margin-right: .6rem;
         }
       }
+    }
 
+    .fab{
+        background: $color-primary-dark;
+        z-index: 100;
+        width: 5rem;
+        height: 5rem;
+        position: fixed;
+        left: 80%;
+        top: -20vh;
     }
 }
