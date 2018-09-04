@@ -22,7 +22,7 @@ export class FivePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     firebase.database().ref('hotel-suites').on('value', (data: any) => {
       this.keys = Object.keys(data.val());
       this.details = data.val();
@@ -36,7 +36,10 @@ export class FivePage {
           url: this.details[k].url,
           occupants: this.details[k].occupants
         }
-        this.suitesArr.push(suites);
+
+        if (suites.rating == 5) {
+          this.suitesArr.push(suites);
+        }
       }
     })
   }

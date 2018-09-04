@@ -35,6 +35,7 @@ export class BudgetPage implements OnInit{
           url: this.details[k].url,
           occupants: this.details[k].occupants
         }
+        if(suites.rating <= 2)
         this.suitesArr.push(suites);
       }
     })
